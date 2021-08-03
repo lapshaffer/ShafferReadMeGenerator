@@ -1,12 +1,8 @@
-// TODO: - Move markdown generation into appropriate file
-    // - then call that functionality in this file after the .then
-// work on License badge rendering
-
-// TODO: Include packages needed for this application
+// Bringing data into file
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js')
-// TODO: Create an array of questions for user input
+// Inquirer prompt with questions
 inquirer
     .prompt([
         {
@@ -56,19 +52,9 @@ inquirer
             name: 'email'
         }
     ])
+    // Using the generateMarkdown file to write ReadMe
     .then((response) => {
-        // console.log(response);
-        generateMarkdown(response);
-
-        fs.writeFile('README.md', response, (error, data) =>
+        fs.writeFile('README.md', generateMarkdown(response), (error, data) =>
         error ? console.error(error) : console.log(data))
     })
 
-// TODO: Create a function to write README file
-// function writeToFile() {},
-
-// TODO: Create a function to initialize app
-// function init() {},
-
-// Function call to initialize app
-// init()
