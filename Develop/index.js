@@ -1,3 +1,7 @@
+// TODO: - Move markdown generation into appropriate file
+    // - then call that functionality in this file after the .then
+// work on License badge rendering
+
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
@@ -55,42 +59,16 @@ inquirer
     .then((response) => {
         // console.log(response);
         generateMarkdown(response);
-        // TODO: Create a function to write README file
-        // Figure out how to include license badge in Description, link and outline to put in License section
-        const inputs = 
-`# ${response.title} \n 
-## Description \n
-${response.description} \n \n
-## Table of Contents \n
-- [Installation](#installation) \n
-- [Usage](#usage) \n
-- [Contribution](#contribution) \n
-- [Testing](#testing) \n
-- [License](#license) \n
-- [Questions](#questions) \n \n
-## Installation \n
-${response.installation} \n \n
-## Usage \n
-${response.usage} \n \n
-## Contribution \n
-${response.contribution} \n \n
-## Testing \n
-${response.testing} \n \n
-## License \n
-${response.license} \n \n
-## Questions \n
-If you have any questions concerning this application, please reach out to me by email at ${response.email} \n
-Github: https://github.com/${response.username} \n` 
-        fs.writeFile('README.md', inputs, (error, data) =>
-        error ? console.error(error) : console.log(data)
-      );
+
+        fs.writeFile('README.md', response, (error, data) =>
+        error ? console.error(error) : console.log(data))
     })
 
 // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {},
+// function writeToFile() {},
 
 // TODO: Create a function to initialize app
 // function init() {},
 
 // Function call to initialize app
-// init();
+// init()
