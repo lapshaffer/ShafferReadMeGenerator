@@ -42,10 +42,10 @@ THEN I am taken to the corresponding section of the README
 ```
 
 ## Resources and Questions
-```md
 
 https://user-images.githubusercontent.com/81975231/128243950-147758b0-daf9-4912-9efe-ad8073d0ec51.mp4
 
+```md
 Sample of generated ReadMe: [README.md](https://github.com/lapshaffer/ShafferReadMeGenerator/files/6933997/README.md)
 
 Please reach out to me with any questions about this application at lapshaffer@gmail.com
